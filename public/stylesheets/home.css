@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    display: flex;
+    height: 100vh;
+    background-color: #AEFEB3;
+  }
+  .sidebar {
+    width: 250px;
+    background-color: #5EA131;
+    color: #ecf0f1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .sidebar a {
+    text-decoration: none;
+    color: #ecf0f1;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: block;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+
+  .sidebar a:hover {
+    background-color: #66d020;
+  }
+
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .header {
+    background-color: #5EA131;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .header .actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .header .actions span {
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .action-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .action-buttons button {
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .action-buttons .add-btn {
+    background-color: #27ae60;
+    color: white;
+  }
+
+  .action-buttons .add-btn:hover {
+    background-color: #2ecc71;
+  }
+
+  .action-buttons .remove-btn {
+    background-color: #e74c3c;
+    color: white;
+  }
+
+  .action-buttons .remove-btn:hover {
+    background-color: #c0392b;
+  }
+
+  .admin-table {
+    margin-top: 30px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .admin-table th, .admin-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .admin-table th {
+    background-color: #5EA131;
+    color: white;
+  }
+
+  .admin-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .admin-table tr:hover {
+    background-color: #ddd;
+  }
+
+  .action-cell button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .action-cell .edit-btn {
+    background-color: #3498db;
+    color: white;
+  }
+
+  .action-cell .edit-btn:hover {
+    background-color: #2980b9;
+  }
+
+  .action-cell .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+  }
+
+  .action-cell .delete-btn:hover {
+    background-color: #c0392b;
+  }
