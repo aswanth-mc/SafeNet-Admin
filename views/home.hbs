@@ -34,24 +34,18 @@
                   <th>Actions</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>John Doe</td>
-                  <td>Collector</td>
-                  <td class="action-cell">
-                    <button class="edit-btn">view</button>
-                    <button class="delete-btn">Delete</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Jane Smith</td>
-                  <td>Village officer</td>
-                  <td class="action-cell">
-                    <button class="edit-btn">view</button>
-                    <button class="delete-btn">Delete</button>
-                  </td>
-                </tr>
-              </body>
+ <tbody>
+      {{#each data}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>{{this.designation}}</td>
+          <td>
+            <button>View</button>
+            <button>Delete</button>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
             </table>
           </section>
         </div>
