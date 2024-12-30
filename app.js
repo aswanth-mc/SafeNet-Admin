@@ -1,17 +1,18 @@
 var createError = require('http-errors');
 var express = require('express');
+var app = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-var loginRouter = require('./routes/login');
-var homeRouter = require('./routes/home');
 const pool =require('./db')
 const cors = require("cors")
 
+var loginRouter = require('./routes/login');
+var homeRouter = require('./routes/home');
+var autho_verifyRouter = require('./routes/autho_verify');
 
 
-var app = express();
+
 
 
 // view engine setup
@@ -25,8 +26,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', loginRouter);
+app.use('/login', loginRouter);
 app.use('/home', homeRouter);
+app.use('/autho_verify',autho_verifyRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
