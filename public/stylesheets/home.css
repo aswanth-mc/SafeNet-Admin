@@ -101,54 +101,55 @@
     background-color: #c0392b;
   }
 
-  .admin-table {
-    margin-top: 30px;
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .admin-table th, .admin-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-  }
-
-  .admin-table th {
-    background-color: #5EA131;
-    color: white;
-  }
-
-  .admin-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-
-  .admin-table tr:hover {
-    background-color: #ddd;
-  }
-
-  .action-cell button {
+  .list-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+.list-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+.list-item:last-child {
+    border-bottom: none;
+}
+.photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 20px;
+}
+.details {
+    flex-grow: 1;
+}
+.name {
+    font-size: 18px;
+    font-weight: bold;
+}
+.designation, .district {
+    font-size: 14px;
+    color: #666;
+}
+.actions {
+    display: flex;
+    gap: 10px;
+}
+.actions button {
     padding: 5px 10px;
     border: none;
-    border-radius: 3px;
+    border-radius: 4px;
     cursor: pointer;
-  }
-
-  .action-cell .edit-btn {
-    background-color: #3498db;
+}
+.actions .view {
+    background-color: #4CAF50;
     color: white;
-  }
-
-  .action-cell .edit-btn:hover {
-    background-color: #2980b9;
-  }
-
-  .action-cell .delete-btn {
-    background-color: #e74c3c;
-    color: white;
-  }
-
-  .action-cell .delete-btn:hover {
-    background-color: #c0392b;
-  }
+}
+.actions .delete {
+    background-color: #f44336;
+}
