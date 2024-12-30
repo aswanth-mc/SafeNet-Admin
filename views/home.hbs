@@ -22,31 +22,30 @@
       
           <section class="content">
             <div class="action-buttons">
-              <button class="add-btn">Add Administrator</button>
-              <button class="remove-btn">Remove Administrator</button>
+              <a href="/autho_verify">
+                <button class="add-btn">New Request</button>
+              </a>
             </div>
+            <br><br>
       
-            <table class="admin-table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Designation</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
- <tbody>
-      {{#each data}}
-        <tr>
-          <td>{{this.name}}</td>
-          <td>{{this.designation}}</td>
-          <td>
-            <button>View</button>
-            <button>Delete</button>
-          </td>
-        </tr>
-      {{/each}}
-    </tbody>
-            </table>
+               <div class="list-container">
+        <ul>
+          {{#each data}}
+            <li class="list-item">
+                <div class="photo">{{this.photo}}</div>
+                <div class="details">
+                    <div class="name">{{this.name}}</div>
+                    <div class="designation">{{this.designation}}</div>
+                    <div class="district">{{this.district}}</div>
+                </div>
+                <div class="actions">
+                    <button class="view">View</button>
+                    <button class="delete">Delete</button>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
           </section>
         </div>
        
