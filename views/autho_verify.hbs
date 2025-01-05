@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="/stylesheets/autho-verify1.css">
 </head>
     <div class="nav">
-        <a href="home">
+        <a href="/home">
         <div class="back">
             <img src="/icons/back-button.png" alt="logout" class="back-icon">
         </div>
@@ -41,11 +41,35 @@
                 <td><img src="{{this.id_proof}}" alt="ID Proof" width="100"></td>
                 <td><img src="{{this.photo}}" alt="Photo" width="100" class="photo-thumbnail" style="width: 50px; height: 50px; cursor: pointer;"></td>
                 <td>
-                    <button class="approve-btn">Approve</button>
-                    <button class="reject-btn">Reject</button>
+                    <button class="approve-btn" >Approve</button>
+                    <button class="reject-btn" >Reject</button>
                 </td>
             </tr>
             {{/each}}
             </tbody>
         </table>
     </div>
+    <script>
+       document.querySelectorAll('.approve-btn').forEach(button => {
+  button.addEventListener('click', async function () {
+    const row = this.closest('tr');
+    const employee_id = row.dataset.employee_id; // Get the authority ID from the row
+
+    try {
+      const response = await fetch(`/verify/approve/${employee_id}`, { method: 'POST' });
+
+      if (response.ok) {
+        alert('Authority approved successfully.');
+        row.style.backgroundColor = '#d4edda'; // Optional: Highlight the approved row
+      } else {
+        const errorText = await response.text();
+        alert(`Failed to approve authority. ${errorText}`);
+      }
+    } catch (error) {
+      console.error('Error approving authority:', error);
+      alert('An error occurred. Please try again.');
+    }
+  });
+});
+
+    </script>

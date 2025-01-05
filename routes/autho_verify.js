@@ -13,7 +13,26 @@ router.get('/', async function(req, res) {
     res.status(500).send('An error occurred while fetching data.');
   }
   });
+  router.post('/verify/approve/:employee_id', async (req, res) => {
+    const employee_id = req.params.employee_id; // Get the ID from the request URL
   
-
-
+    try {
+      // Check if the record exists
+      const checkQuery = 'SELECT * FROM authority WHERE employee_id = $7';
+      const checkResult = await pool.query(checkQuery, [employee_id]);
+  
+      if (checkResult.rowCount === 0) {
+        return res.status(404).send('Authority record not found.');
+      }
+  
+      // Update the verified status to true
+      const updateQuery = 'UPDATE authority SET verified = true WHERE employee_id = $7';
+      await pool.query(updateQuery, [employee_id]);
+  
+      res.status(200).send('Authority approved successfully.');
+    } catch (error) {
+      console.error('Error approving authority:', error.message);
+      res.status(500).send('An error occurred while approving authority.');
+    }
+  });
   module.exports = router;
