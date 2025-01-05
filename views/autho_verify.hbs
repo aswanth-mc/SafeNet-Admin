@@ -53,10 +53,10 @@
        document.querySelectorAll('.approve-btn').forEach(button => {
   button.addEventListener('click', async function () {
     const row = this.closest('tr');
-    const employee_id = row.dataset.employee_id; // Get the authority ID from the row
+    const id = row.dataset.id; // Get the authority ID from the row
 
     try {
-      const response = await fetch(`/verify/approve/${employee_id}`, { method: 'POST' });
+      const response = await fetch(`/verify/approve/${id}`, { method: 'POST' });
 
       if (response.ok) {
         alert('Authority approved successfully.');
