@@ -14,10 +14,10 @@ router.get('/', async function(req, res) {
   }
   });
   router.post('/verify/approve/:employee_id', async (req, res) => {
-    const employee_id = req.params.employee_id; // Get the ID from the request URL
+    const employee_id = req.params.employee_id; 
   
     try {
-      // Check if the record exists
+      
       const checkQuery = 'SELECT * FROM authority WHERE employee_id = $7';
       const checkResult = await pool.query(checkQuery, [employee_id]);
   
@@ -25,7 +25,7 @@ router.get('/', async function(req, res) {
         return res.status(404).send('Authority record not found.');
       }
   
-      // Update the verified status to true
+      
       const updateQuery = 'UPDATE authority SET verified = true WHERE employee_id = $7';
       await pool.query(updateQuery, [employee_id]);
   
