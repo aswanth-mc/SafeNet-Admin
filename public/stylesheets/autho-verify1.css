@@ -1,0 +1,102 @@
+.btn{
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    background-color: rgb(15, 185, 15);
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: green;
+    box-shadow: 0.5px 0.5px 3px black;
+    color: white;
+}
+
+table{
+    margin-top: 30px;
+}
+
+.body {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1000;
+}
+
+.lab,.inp{
+    display:block;
+}
+.box{
+    width: 500px;
+    height: 500px;
+    background-color: #AEFEB3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    position: relative;
+
+}
+
+.lab{
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 3px;
+}
+
+.inp{
+    width: 300px;
+    height: 30px;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 3px;
+    border: none;
+    padding-left: 5px;
+    color: rgb(118, 115, 115);
+
+}
+
+.submit{
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: none;
+    background-color: rgb(15, 185, 15);
+    cursor: pointer;
+
+}
+
+.submit:hover{
+background-color: green;
+box-shadow: 0.5px 0.5px 3px black;
+color: white;
+}
+
+.close{
+    width: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 15px;
+    cursor: pointer;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}

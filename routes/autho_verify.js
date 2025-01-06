@@ -4,7 +4,7 @@ const pool =require('../db')
 
 router.get('/', async function(req, res) {
   try {
-    const query = `SELECT name, email, phone_number, office_address, designation, department, employee_id, id_proof, photo FROM authority`;
+    const query = `SELECT id,name, email, phone_number, office_address, designation, department, employee_id, id_proof, photo FROM authority`;
     const { rows } = await pool.query(query);
 
     res.render('autho_verify', { data: rows });
@@ -14,6 +14,4 @@ router.get('/', async function(req, res) {
   }
   });
   
-
-
   module.exports = router;

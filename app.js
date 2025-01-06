@@ -6,6 +6,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const pool =require('./db')
 const cors = require("cors")
+const passport = require("./passport")
+const session =require("express-session")
+const flash =require("connect-flash")
+
 
 var loginRouter = require('./routes/login');
 var homeRouter = require('./routes/home');
@@ -26,9 +30,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// passport initilize
+app.use(
+  session({
+    secret:"your-secret-key",
+    resave:false, 
+    saveUninitialized:true,
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
 app.use('/login', loginRouter);
 app.use('/home', homeRouter);
-app.use('/autho_verify',autho_verifyRouter)
+app.use('/autho_verify',autho_verifyRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
